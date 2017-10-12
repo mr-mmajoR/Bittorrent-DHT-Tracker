@@ -1,0 +1,22 @@
+{{define "content"}}
+
+		<table>
+			<tr><td>Addeded:</td><td colspan="2">{{.Addeded}}</td></tr>
+			<tr><td>Updated:</td><td colspan="2">{{.Updated}}</td></tr>
+			<tr><td>Length:</td><td colspan="2">{{.Torrent.Length}}</td></tr>
+			<tr><td>Name:</td><td colspan="2">{{.Torrent.Name}} <a href="https://www.google.ru/search?q={{urlquery .Torrent.Name}}" target="_blank"><span class="glyphicon glyphicon-search"></span></a></td></tr>
+			<tr><td>InfoHash:</td><td colspan="2">{{.Torrent.InfoHash}} <a href="https://www.google.ru/search?q={{urlquery .Torrent.InfoHash}}" target="_blank"><span class="glyphicon glyphicon-search"></span></a></td></tr>
+			<tr><td>Magnet:</td><td colspan="2"><a href="magnet:?xt=urn:btih:{{.Torrent.InfoHash}}&dn={{.Torrent.Name}}">magnet:?xt=urn:btih:{{.Torrent.InfoHash}}&dn={{.Torrent.Name}} <span class="glyphicon glyphicon-magnet"></span></a></td></tr>
+			{{if .Torrent.HaveFiles}}
+			<tr><td colspan="3">File list:</td></tr>
+				{{range .Torrent.Files}}
+		            <tr>
+			            <td>&nbsp</td>
+			            <td>{{.Length}}</td>
+			            <td>{{.Path}} <a href="https://www.google.ru/search?q={{urlquery .Path}}" target="_blank"><span class="glyphicon glyphicon-search"></span></a></td>
+		            </tr>
+		        {{end}}
+	        {{end}}	        
+        </table>
+
+{{end}}

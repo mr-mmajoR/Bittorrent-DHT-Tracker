@@ -1,0 +1,61 @@
+{{define "base"}}
+<!DOCTYPE html>
+<html>
+	<header>
+		<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="description" content="">
+	    <meta name="author" content="">
+	    <link rel="shortcut icon" href="/static/img/favicon.ico">
+
+	    <link href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	    <link href="/static/css/main/main.css" rel="stylesheet">
+
+	    <title>{{.Title}}</title>
+
+	<header>
+	<body>
+		<!-- Fixed navbar -->
+		<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+		  <div class="container">
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="#">DHT Search Engine</a>
+		    </div>
+		    <div class="navbar-collapse collapse">
+		      <ul class="nav navbar-nav">
+		        <li class="active"><a href="/">Home</a></li>
+		        <li><a href="/page/about">About</a></li>
+		        <li><a href="/page/contact">Contact</a></li>
+		      </ul>
+		    </div><!--/.nav-collapse -->
+		  </div>
+		</div>
+
+		<div class="container">
+			<!-- Main component for a primary marketing message or call to action -->
+			
+				<h1 class="text-center">{{.Title}}</h1>
+			
+
+				<div id="content" class="row">
+					{{template "content" . }}
+				</div>
+
+				<hr />
+
+				<div class="footer">
+					<p>&copy; Copyright 2017 by mmajoR.</p>
+				</div>	
+	    </div> <!-- /container -->
+	    <script src="/static/bower_components/jquery/dist/jquery.min.js"></script>
+	    <script src="/static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	</body>
+</html>
+{{end}}

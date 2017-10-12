@@ -1,0 +1,17 @@
+{
+	"spider":{
+		"port":"6882"
+	},
+	
+	"database":{
+		"host":"",
+		"name":"dhtbt",
+		"user":"btdht",
+		"password":"btdht"
+	},
+
+	"webinterface":{
+		"port":"9999",
+		"interface":""
+	}
+}

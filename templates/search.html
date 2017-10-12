@@ -1,0 +1,30 @@
+{{define "content"}}
+
+		<form action="/search/" class="form">
+		<input type="text" name="q" value="{{.Query}}" style="min-width:40%" /> <br />
+		Sort by 
+		<input type="radio" name="order" value="cnt"{{if eq .Order "cnt"}} checked="checked" {{end}} /> popularity
+		 or <input type="radio" name="order" value="upd"{{if ne .Order "cnt"}} checked="checked" {{end}} /> updates
+		<input type="submit" name="submit" /> 
+		</form>
+		<hr />
+		<div>
+		<h4>Founded {{len .Founded}} torrents.</h4>
+
+        {{range .Founded}}
+			<div class="row">
+	            <div class="col-xs-2 col-md-1">{{.Length}}</div>
+	            <div class="col-xs-10 col-md-11">
+	            {{if .HaveFiles}}
+	            	<a href="/details/?id={{.Id}}">{{.Name}}</a>
+	            {{else}}
+	            	{{.Name}}
+	            {{end}}
+	            <a href="https://www.google.ru/search?q={{urlquery .Name}}" target="_blank"><span class="glyphicon glyphicon-search"></span></a>
+	            <a href="magnet:?xt=urn:btih:{{.InfoHash}}&dn={{.Name}}"><span class="glyphicon glyphicon-magnet"></span></a>
+	            </div>
+            </div>
+	        {{end}}
+        </div>
+
+{{end}}

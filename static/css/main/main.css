@@ -1,0 +1,12 @@
+ 
+body {
+  min-height: 1000px;
+  padding-top: 70px;
+}
+
+
+div.name-of-hash {
+	white-space: nowrap;
+ 	overflow: hidden;
+	text-overflow: ellipsis;
+}
